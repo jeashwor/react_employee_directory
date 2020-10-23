@@ -1,11 +1,13 @@
 import React from "react";
 import "./style.css";
 
-function Header () {
+function Header() {
     return (
-        <header className="header">
-            <h1>React Employee Directory</h1>
-            <p> Write Instructions here!!!!!</p>
+        <header className="jumbotron jumbotron-fluid header">
+            <div className="container text-center">
+                <h1 className="display-3">React Employee Directory</h1>
+                <p className="lead"> Write Instructions here!!!!!</p>
+            </div>
         </header>
     );
 }
