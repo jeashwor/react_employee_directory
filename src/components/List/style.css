@@ -1,0 +1,13 @@
+.header {
+    display: grid;
+    grid-template-columns: 15% 20% 10% 15% 15% 25%;
+    grid-template-rows: 30px;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.name {
+    cursor: pointer;
+}
