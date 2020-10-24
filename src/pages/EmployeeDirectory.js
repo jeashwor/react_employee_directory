@@ -27,7 +27,6 @@ class EmployeeDirectory extends Component {
             </div>
         );
     }
-
 }
 
 export default EmployeeDirectory;
