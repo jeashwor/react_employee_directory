@@ -61,6 +61,7 @@ class List extends Component {
                     <div><p onClick={this.sortItem} className="name">Name</p></div>
                     <div>DOB</div>
                     <div>Phone</div>
+                    <div>Cell</div>
                     <div>Email</div>
                 </div>
                 { this.state.sortedEmployees.length > 0 && this.state.sortedEmployees.map((item, index) => (

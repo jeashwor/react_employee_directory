@@ -8,11 +8,11 @@ import EmployeeDirectory from "./pages/EmployeeDirectory";
 function App() {
   return (
 
-      <div>
-        <Header />
-        <EmployeeDirectory />
-        <Footer />
-      </div>
+    <div>
+      <Header />
+      <EmployeeDirectory />
+      <Footer />
+    </div>
 
   );
 }
