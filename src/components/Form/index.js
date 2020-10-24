@@ -28,7 +28,7 @@ class Form extends Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
                 <form className="form">
                     <input
                         value={this.state.searchField}

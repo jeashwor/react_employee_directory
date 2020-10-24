@@ -56,7 +56,7 @@ class List extends Component {
     render() {
         return (
             <div>
-                <div className="header">
+                <div className="listHeader">
                     <div>Photo</div>
                     <div><p onClick={this.sortItem} className="name">Name</p></div>
                     <div>DOB</div>

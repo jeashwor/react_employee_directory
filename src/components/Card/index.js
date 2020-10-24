@@ -9,14 +9,14 @@ function Card(props) {
     console.log(DOB);
 
     return (
-        <div className="card">
+        <card className="card">
             <div><img alt={props.last} src={props.image}></img></div>
             <div>{props.title} {props.first} {props.last} </div>
             <div>{DOB}</div>
             <div>{props.phone}</div>
             <div>{props.cell}</div>
             <div>{props.email}</div>
-        </div>
+        </card>
     );
 }
 
