@@ -1,8 +1,12 @@
 import React from "react";
 import "./style.css";
+import moment from "moment";
 
 function Card(props) {
-    var DOB = new Date(props.date);
+    let userDOB = props.age
+    console.log(props);
+    let DOB = moment(userDOB).format("MM-DD-YYYY");
+    console.log(DOB);
 
     return (
         <div className="card">

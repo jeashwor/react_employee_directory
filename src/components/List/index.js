@@ -1,19 +1,18 @@
 import React, { Component } from "react";
-import Card from "../../components/Card";
-import search from "../../utils/API";
+import Card from "../Card";
 
 
 class List extends Component {
     state = {
         sortedEmployees: [],
-        employees: [],
+        employees: this.props.empList,
         sorted: true
     };
 
     componentDidMount() {
-        search().then(res => {
-            this.setState({ employees: res.data.results });
-        });
+        if (this.state.sortedEmployees.length < 1) {
+            this.setState({ sortedEmployees: this.props.empList })
+        }
     }
 
     componentDidUpdate(prevProps) {
@@ -29,7 +28,7 @@ class List extends Component {
         if (this.state.sorted) {
             sortList = this.props.empList.sort((a, b) => {
                 let itemA = a.name.last.toLowerCase();
-                let itemB = b.name.last.toLowerCAse();
+                let itemB = b.name.last.toLowerCase();
                 if (itemA < itemB)
                     return -1
                 if (itemA > itemB)
@@ -39,7 +38,7 @@ class List extends Component {
         } else {
             sortList = this.props.empList.sort((a, b) => {
                 let itemA = a.name.last.toLowerCase();
-                let itemB = b.name.last.toLowerCAse();
+                let itemB = b.name.last.toLowerCase();
                 if (itemA > itemB)
                     return -1
                 if (itemA < itemB)
@@ -65,6 +64,7 @@ class List extends Component {
                 </div>
                 { this.state.sortedEmployees.length > 0 && this.state.sortedEmployees.map((item, index) => (
                     <Card
+                        key={index}
                         image={item.picture.medium}
                         title={item.name.title}
                         first={item.name.first}

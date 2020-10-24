@@ -1,16 +1,32 @@
 import React, { Component } from "react";
-import List from "../components/List";
 import Form from "../components/Form";
+import API from "../utils/API";
 
 
-function EmployeeDirectory() {
+class EmployeeDirectory extends Component {
+    state = {
+        employees: [],
+    };
 
-    return (
-        <div>
-            <Form />
-            <List />
-        </div>
-    );
+    componentDidMount() {
+        API.search()
+            .then(res => {
+                this.setState({
+                    employees: res.data.results
+                })
+            })
+            .catch(err => console.log(err));
+    };
+
+    render() {
+        return (
+            <div>
+                {this.state.employees.length > 0 &&
+                    <Form employees={this.state.employees} />
+                }
+            </div>
+        );
+    }
 
 }
 
